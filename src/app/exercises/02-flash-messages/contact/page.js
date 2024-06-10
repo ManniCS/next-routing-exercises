@@ -7,11 +7,7 @@ import {ToastContext} from '../../../../components/ToastProvider'
 
 function ContactPage() {
   const router = useRouter()
-
   const {createToast} = React.useContext(ToastContext)
-
-  const [name, setName] = React.useState('');
-  const [message, setMessage] = React.useState('');
 
   return (
     <main>
@@ -23,14 +19,10 @@ function ContactPage() {
         }}
       >
         <label htmlFor="name">Name:</label>
-        <input id="name" value={name} required={true} onChange={(event) => {
-          setName(event.target.value)
-        }}/>
+        <input id="name" required={true}/>
 
         <label htmlFor="message">Message:</label>
-        <textarea id="message" value={message} required={true} onChange={(event) => { 
-          setMessage(event.target.value)
-        }}/>
+        <textarea id="message" required={true}/>
 
         <button>Submit</button>
       </form>
